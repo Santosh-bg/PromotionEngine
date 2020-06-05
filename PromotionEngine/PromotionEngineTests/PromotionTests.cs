@@ -55,18 +55,16 @@ namespace PromotionEngineTests
             Assert.Equal(280, value);
         }
 
-        //public void ScenarioD()
-        //{
-        //    var carts = new Cart
-        //    {
-        //        Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=5 },
-        //            new Cartitem{Skuname = "A",Quantity=1 ,Price=50},
-        //            new Cartitem{Skuname = "B",Quantity=1,Price=30 },
-        //            new Cartitem{Skuname = "C",Quantity=5,Price=20 } }
-        //    };
-        //    Promotion promotion = new Promotion();
-        //    var value = promotion.Process(carts);
-        //    Assert.Equal(100, value);
-        //}
+        [Fact]
+        public void CartitemOnlyhaveSkuA()
+        {
+            var carts = new Cart
+            {
+                Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=5 }}
+            };
+            Promotion promotion = new Promotion();
+            var value = promotion.Process(carts);
+            Assert.Equal(100, value);
+        }
     }
 }

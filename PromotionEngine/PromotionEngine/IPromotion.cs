@@ -7,6 +7,6 @@ namespace PromotionEngine
 {
     interface IPromotion
     {
-        decimal Process(Cart cart);
+        int Process(Cart cart);
     }
 }
