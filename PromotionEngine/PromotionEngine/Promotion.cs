@@ -38,7 +38,7 @@ namespace PromotionEngine
             {
                 var skuCandDcountRule = promotionRuleFactory.GetPromotionRule(skuCandDCartItems[0].Skuname);
                 var obj = skuCandDcountRule as SkuCandDCountRule;
-                amountForCandD = skuCandDcountRule.GetPromotionAppliedAmountForSkuCandD(skuCandDCartItems);
+                amountForCandD = obj.GetPromotionAppliedAmountForSkuCandD(skuCandDCartItems);
             }
                 
 
