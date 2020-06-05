@@ -5,7 +5,7 @@ using PromotionEngine.Entities;
 
 namespace PromotionEngine.PromotionRules
 {
-    class SkuCandDCountRule : KsuCountRuleBase, ISkuACountRule
+    class SkuCandDCountRule : KsuCountRuleBase, ISkuCandDCountRule
     {
         public int GetPromotionAppliedAmountForSkuCandD(List<Cartitem> cartitem)
         {

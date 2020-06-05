@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PromotionEngine.PromotionRules
 {
-    class SkuBCountRule : KsuCountRuleBase, ISkuACountRule
+    class SkuBCountRule : KsuCountRuleBase, ISkuBCountRule
     {
         public int GetPromotionAppliedAmountForSkuB(Cartitem cartitem)
         {
