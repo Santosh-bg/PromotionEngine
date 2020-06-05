@@ -7,7 +7,7 @@ namespace PromotionEngine.PromotionRules
 {
     class SkuCandDCountRule : ISkuCandDCountRule
     {
-        public int GetPromotionAppliedAmountForSkuB(Cartitem cartitem)
+        public int GetPromotionAppliedAmountForSkuCandD(List<Cartitem> cartitem)
         {
             int amount = 0;
             return amount;

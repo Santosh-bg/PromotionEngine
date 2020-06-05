@@ -7,6 +7,6 @@ namespace PromotionEngine.PromotionRules
 {
     interface ISkuCandDCountRule
     {
-        int GetPromotionAppliedAmountForSkuB(Cartitem cartitem);
+        int GetPromotionAppliedAmountForSkuCandD(List<Cartitem> cartitem);
     }
 }
