@@ -23,21 +23,21 @@ namespace PromotionEngine
                 var obj= skuAcountRule as SkuACountRule;   
                 amountForA = obj.GetPromotionAppliedAmountForSkuA(skuACartItems[0]);
             }
-         //   SkuBCountRule skuBcountRule = new SkuBCountRule();
+         
             var skuBCartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("B"));
             if (skuBCartItems != null && skuBCartItems.Count > 0)
             {
-                var skuAcountRule = promotionRuleFactory.GetPromotionRule(skuBCartItems[0].Skuname);
-                var obj = skuAcountRule as SkuBCountRule;
+                var skuBcountRule = promotionRuleFactory.GetPromotionRule(skuBCartItems[0].Skuname);
+                var obj = skuBcountRule as SkuBCountRule;
 
                 amountForB = obj.GetPromotionAppliedAmountForSkuB(skuBCartItems[0]);
             }
-            SkuCandDCountRule skuCandDcountRule = new SkuCandDCountRule();
+            
             var skuCandDCartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("C") || x.Skuname.Equals("D"));
             if(skuCandDCartItems != null && skuCandDCartItems.Count>0)
             {
-                var skuAcountRule = promotionRuleFactory.GetPromotionRule(skuCandDCartItems[0].Skuname);
-                var obj = skuAcountRule as SkuCandDCountRule;
+                var skuCandDcountRule = promotionRuleFactory.GetPromotionRule(skuCandDCartItems[0].Skuname);
+                var obj = skuCandDcountRule as SkuCandDCountRule;
                 amountForCandD = skuCandDcountRule.GetPromotionAppliedAmountForSkuCandD(skuCandDCartItems);
             }
                 
