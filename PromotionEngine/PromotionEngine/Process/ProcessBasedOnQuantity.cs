@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using PromotionEngine.Entities;
+using PromotionEngine.PromotionRules;
 
 namespace PromotionEngine.Process
 {
@@ -9,7 +10,39 @@ namespace PromotionEngine.Process
     {
         public int ProcessAmoutBasedOnCountPromotion(Cart cart)
         {
-            throw new NotImplementedException();
+            int TotalAmountAfterPromotionApplied = 0;
+            int amountForA = 0;
+            int amountForB = 0;
+            int amountForCandD = 0;
+            PromotionRuleFactory promotionRuleFactory = new PromotionRuleFactory();
+
+            var skuACartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("A"));
+            if (skuACartItems != null && skuACartItems.Count > 0)
+            {
+                var skuAcountRule = promotionRuleFactory.GetPromotionRule(skuACartItems[0].Skuname);
+                var obj = skuAcountRule as SkuACountRule;
+                amountForA = obj.GetPromotionAppliedAmountForSkuA(skuACartItems[0]);
+            }
+
+            var skuBCartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("B"));
+            if (skuBCartItems != null && skuBCartItems.Count > 0)
+            {
+                var skuBcountRule = promotionRuleFactory.GetPromotionRule(skuBCartItems[0].Skuname);
+                var obj = skuBcountRule as SkuBCountRule;
+
+                amountForB = obj.GetPromotionAppliedAmountForSkuB(skuBCartItems[0]);
+            }
+
+            var skuCandDCartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("C") || x.Skuname.Equals("D"));
+            if (skuCandDCartItems != null && skuCandDCartItems.Count > 0)
+            {
+                var skuCandDcountRule = promotionRuleFactory.GetPromotionRule(skuCandDCartItems[0].Skuname);
+                var obj = skuCandDcountRule as SkuCandDCountRule;
+                amountForCandD = obj.GetPromotionAppliedAmountForSkuCandD(skuCandDCartItems);
+            }
+
+
+            return TotalAmountAfterPromotionApplied = amountForA + amountForB + amountForCandD;
         }
     }
 }
