@@ -64,7 +64,7 @@ namespace PromotionEngineTests
             };
             Promotion promotion = new Promotion();
             var value = promotion.Process(carts);
-            Assert.Equal(100, value);
+            Assert.Equal(230, value);
         }
     }
 }
