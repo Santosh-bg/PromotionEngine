@@ -3,3 +3,9 @@
 ################################################################################
 
 /PromotionEngine/PromotionEnggineTests/bin/Debug/netstandard2.0
+/PromotionEngine/PromotionEnggineTests/obj
+/PromotionEngine/PromotionEngine/bin/Debug/netstandard2.0
+/PromotionEngine/.vs/PromotionEngine
+/PromotionEngine/PromotionEngine/obj
+/PromotionEngine/PromotionEngineTests/bin/Debug/netcoreapp2.2
+/PromotionEngine/PromotionEngineTests/obj
