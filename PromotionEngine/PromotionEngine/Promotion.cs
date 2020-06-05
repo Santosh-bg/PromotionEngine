@@ -21,9 +21,9 @@ namespace PromotionEngine
 
             SkuCandDCountRule skuCandDcountRule = new SkuCandDCountRule();
             var skuCandDCartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("C") || x.Equals("D"));
-            var amountForCandD = skuCandDcountRule.GetPromotionAppliedAmountForSkuCandD(skuACartItems);
+            var amountForCandD = skuCandDcountRule.GetPromotionAppliedAmountForSkuCandD(skuCandDCartItems);
 
-            return TotalAmountAfterPromotionApplied = amountForA + amountForB;
+            return TotalAmountAfterPromotionApplied = amountForA + amountForB + amountForCandD;
         }
     }
 }

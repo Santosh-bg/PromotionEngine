@@ -14,10 +14,10 @@ namespace PromotionEngineTests
         {
             var carts = new Cart
             {
-                Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=5 },
-                    new Cartitem{Skuname = "A",Quantity=1 ,Price=50},
-                    new Cartitem{Skuname = "B",Quantity=1,Price=30 },
-                    new Cartitem{Skuname = "C",Quantity=5,Price=20 } }
+                Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=1,Price=50},
+                    new Cartitem{Skuname = "B",Quantity=1 ,Price=30},
+                    new Cartitem{Skuname = "C",Quantity=1,Price=20 },
+                    new Cartitem{Skuname = "D",Quantity=1,Price=15 } }
             };
             Promotion promotion = new Promotion();
             var value = promotion.Process(carts);
