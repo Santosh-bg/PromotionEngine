@@ -14,11 +14,15 @@ namespace PromotionEngine
             int amountForA = 0;
             int amountForB = 0;
             int amountForCandD = 0;
-            SkuACountRule skuAcountRule = new SkuACountRule();
+            PromotionRuleFactory promotionRuleFactory = new PromotionRuleFactory();
+           // SkuACountRule skuAcountRule = new SkuACountRule();
             var skuACartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("A"));
-            if(skuACartItems!=null  && skuACartItems.Count>0)
-                amountForA = skuAcountRule.GetPromotionAppliedAmountForSkuA(skuACartItems[0]);
-
+            if (skuACartItems != null && skuACartItems.Count > 0)
+            {
+                var skuAcountRule = promotionRuleFactory.GetPromotionRule(skuACartItems[0].Skuname);
+                var obj= skuAcountRule as SkuACountRule;   
+                amountForA = obj.GetPromotionAppliedAmountForSkuA(skuACartItems[0]);
+            }
             SkuBCountRule skuBcountRule = new SkuBCountRule();
             var skuBCartItems = cart.Cartitems.FindAll(x => x.Skuname.Equals("B"));
             if(skuBCartItems!=null && skuBCartItems.Count>0)
