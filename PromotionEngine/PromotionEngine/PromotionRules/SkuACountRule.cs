@@ -6,7 +6,7 @@ using PromotionEngine.Entities;
 
 namespace PromotionEngine.PromotionRules
 {
-    class SkuACountRule : ISkuACountRule
+    class SkuACountRule : KsuCountRuleBase, ISkuACountRule
     {
         public int GetPromotionAppliedAmountForSkuA(Cartitem cartitem)
         {
