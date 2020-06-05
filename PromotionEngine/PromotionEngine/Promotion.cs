@@ -8,10 +8,10 @@ using PromotionEngine.PromotionRules;
 namespace PromotionEngine
 {
     public class Promotion : IPromotion
-    {        
+    {
         public int Process(Cart cart)
         {
-            ProcessBasedOnQuantity processBasedOnQuantity = new ProcessBasedOnQuantity();
+            ProcessBasedOnQuantity processBasedOnQuantity = new ProcessBasedOnQuantity(new PromotionRuleFactory());
             return processBasedOnQuantity.ProcessAmoutBasedOnCountPromotion(cart);
         }
     }
