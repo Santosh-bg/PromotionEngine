@@ -16,8 +16,7 @@ namespace PromotionEngineTests
             {
                 Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=1,Price=50},
                     new Cartitem{Skuname = "B",Quantity=1 ,Price=30},
-                    new Cartitem{Skuname = "C",Quantity=1,Price=20 },
-                    new Cartitem{Skuname = "D",Quantity=1,Price=15 } }
+                    new Cartitem{Skuname = "C",Quantity=1,Price=20 } }
             };
             Promotion promotion = new Promotion();
             var value = promotion.Process(carts);
@@ -30,9 +29,8 @@ namespace PromotionEngineTests
             var carts = new Cart
             {
                 Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=5 },
-                    new Cartitem{Skuname = "A",Quantity=5 ,Price=250},
-                    new Cartitem{Skuname = "B",Quantity=1,Price=150 },
-                    new Cartitem{Skuname = "C",Quantity=5,Price=20 } }
+                    new Cartitem{Skuname = "B",Quantity=5 ,Price=250},
+                    new Cartitem{Skuname = "C",Quantity=1,Price=150 } }
             };
             Promotion promotion = new Promotion();
             var value = promotion.Process(carts);
@@ -44,11 +42,10 @@ namespace PromotionEngineTests
         {
             var carts = new Cart
             {
-                Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=5 },
-                    new Cartitem{Skuname = "A",Quantity=3 ,Price=150},
-                    new Cartitem{Skuname = "B",Quantity=5,Price=150},
-                    new Cartitem{Skuname = "C",Quantity=1,Price=20 },
-                    new Cartitem{Skuname = "D",Quantity=1,Price=20 } }
+                Cartitems = new List<Cartitem> {new Cartitem{Skuname = "A",Quantity=3},
+                    new Cartitem{Skuname = "B",Quantity=5 },
+                    new Cartitem{Skuname = "C",Quantity=1},                    
+                    new Cartitem{Skuname = "D",Quantity=1 } }
             };
             Promotion promotion = new Promotion();
             var value = promotion.Process(carts);
